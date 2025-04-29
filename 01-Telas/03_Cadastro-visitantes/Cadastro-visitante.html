@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="http://servicos.sead.am.gov.br/wp-content/uploads/2020/06/cropped-favicon-192x192.png" sizes="192x192">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <title>Recepção SEAD</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1>Recepção SEAD</h1>
+        <nav>
+          <a href="../02_Home/home.html" onclick="fadeOut(event, this)">Início</a>
+          <a href="../03_Cadastro-visitantes/Cadastro-visitante.html" onclick="fadeOut(event, this)">Registrar Visita</a>
+          <a href="../04_Lista-visitantes/Lista-visitantes.html" onclick="fadeOut(event, this)">Lista de Visitas</a>
+          <a href="../06_Relatorios/relatorios.html" onclick="fadeOut(event, this)">Relatórios</a>
+          <a href="../05_Ramais/ramais.html" onclick="fadeOut(event, this)">Ramais SEAD</a>
+          <a href="#">Sair</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+          <h2>Cadastrar Visitantes</h2>
+          <form class="formulario">
+    
+            <!-- Campos principais -->
+            <div class="form-esquerdo">
+    
+              <!-- 1ª linha: Tipo doc • Documento • Data -->
+              <div class="primeira-linha">
+                <div class="campo-documento">
+                  <label for="documento">Documento <span class="required">*</span></label>
+                  <div class="input-with-icon">
+                    <input type="text" id="documento" name="documento" placeholder="Nº do documento" required>
+                    <button type="button" title="Pesquisar">🔍</button>
+                  </div>
+                </div>
+              
+                <div class="campo-data">
+                  <label for="data-entrada">Data de entrada <span class="required">*</span></label>
+                  <input type="date" id="data-entrada" required readonly>
+                </div>
+              
+                <div class="campo-hora">
+                  <label for="hora-entrada">Hora de entrada <span class="required">*</span></label>
+                  <input type="time" id="hora-entrada" required readonly>
+                </div>
+              </div> 
+    
+              <!-- 2ª linha: Nome • Contato -->
+              <div class="segunda-linha">
+                <div class="form-control nome">
+                  <label for="nome">Nome completo <span class="required">*</span></label>
+                  <input type="text" id="nome" placeholder="Nome do visitante" required>
+                </div>
+                <div class="form-control contato">
+                  <label for="contato">Contato</label>
+                  <input type="text" id="contato" placeholder="(00) 00000-0000">
+                </div>
+              </div>
+    
+              <!-- 3ª linha: Órgão • Setor -->
+              <div class="terceira-linha">
+                <div class="form-control">
+                  <label for="orgao">Órgão/Entidade</label>
+                  <input type="text" id="orgao" placeholder="Caso aplicável">
+                </div>
+                
+                <div class="form-control">
+                  <label for="setorInput">Setor a ser visitado <span class="required">*</span></label>
+                  <input type="text" id="setorInput" placeholder="Digite o setor ou sigla...">
+                </div>
+              </div>
+    
+              <!-- 4ª linha: Servidor e Status -->
+              <div class="quarta-linha">
+                <div class="form-control">
+                  <label for="orgao">Servidor a ser visitado</label>
+                  <input type="text" id="servidores" placeholder="Digite ou selecione o servidor">
+                </div>
+                  
+                <div class="form-control">
+                  <label for="setorInput">Status do Servidor</label>
+                  <input type="text" id="setorInput" placeholder="Digite o setor ou sigla...">
+                </div>
+              </div>
+    
+              <!-- Botões de ação -->
+              <div class="form-actions">
+                <button type="submit" class="btn salvar">
+                  <span>Salvar</span>
+                </button>
+                <button type="reset" class="btn cancelar">
+                  <span>Cancelar</span>
+                </button>
+              </div>
+            </div>
+    
+    
+            <!-- Seção de foto -->
+            <div class="form-direito">
+              <h4>Registro fotográfico</h4>
+  
+              <div class="foto-box" id="foto-box">
+                <span id="foto-texto">Foto do visitante</span>
+                <video id="video" autoplay playsinline style="display: none; width: 100%; height: 100%; object-fit: cover;"></video>
+                <canvas id="canvas" style="display: none;"></canvas>
+              </div>
+    
+              <div class="form-actions">
+                <button type="button" class="btn foto" id="btn-foto" onclick="alternarCameraOuCaptura()">
+                  Registrar
+                </button>
+                <button type="button" class="btn galeria" onclick="abrirGaleria()">
+                  Da galeria
+                </button>
+                <input type="file" id="input-galeria" accept="image/*" style="display: none;">
+              </div>
+            </div>
+    
+          </form>
+        </section>
+  </main>
+     
+    <footer class="rodape">
+        Copyright © 2025 SEAD | EPP. Todos os direitos reservados 
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

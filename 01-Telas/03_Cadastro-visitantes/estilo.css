@@ -1,0 +1,473 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+/* Tipografia e fundo */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background:rgb(248, 248, 248);
+    color: #333;
+    line-height: 1.4;
+    padding-top: 55px; /* Deixa espaço para a topbar */
+}
+
+.cabecalho {
+  /* Posicionamento fixo no topo */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  /* Layout flexível */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Estilo visual */
+  background: linear-gradient(93deg, rgba(41, 50, 100, 1) 19%, rgba(10, 133, 61, 1) 100%);
+  color: #fff;
+  padding: 10px 30px;
+}
+
+.cabecalho nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cabecalho nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.cabecalho nav a:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+}
+  
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #293264;
+  background: linear-gradient(93deg, rgba(41, 50, 100, 1) 19%, rgba(10, 133, 61, 1) 100%);
+  color: #fff;
+  padding: 10px 30px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+
+/* Container principal */
+main {
+  padding: 30px;
+  max-width: 2000px;
+}
+
+.card {
+  position: relative;
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto; /* Centraliza horizontalmente */
+  padding: 25px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+  
+/* Layout do formulário */
+.formulario {
+  display: flex;
+  gap: 40px;
+}
+
+.form-esquerdo {
+  flex: 2;
+  background-color: rgb(255, 255, 255);
+}
+
+.required {
+  color: red;
+}
+
+/* PRIMEIRA LINHA DO FORMULÁRIO */
+
+/* Padroniza todos os inputs */
+.primeira-linha input,
+.primeira-linha .input-with-icon input {
+  font-family: inherit; /* mesma fonte que o site todo */
+  font-size: 14px; /* ajuste o tamanho que quiser */
+  color: #333; /* cor do texto */
+}
+
+/* Estiliza campos readonly (data e hora) */
+.campo-data input[readonly],
+.campo-hora input[readonly] {
+  background-color: #f0f0f0; /* cinza claro, para parecer desativado */
+  color: #666; /* texto mais escuro */
+  cursor: not-allowed; /* mostra o cursor de "não permitido" */
+}
+
+.primeira-linha {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* Documento 2x maior, depois Data e Hora */
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+/* Faz o campo-documento ocupar as 2 primeiras colunas */
+.campo-documento {
+  grid-column: 1 / 2; /* já ocupa sozinho a coluna 1 (2fr) */
+}
+
+/* Campo data em coluna 2 */
+.campo-data {
+  grid-column: 2 / 3;
+}
+
+/* Campo hora em coluna 3 */
+.campo-hora {
+  grid-column: 3 / 4;
+}
+
+/* Labels e inputs todos padronizados */
+.primeira-linha label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.primeira-linha input,
+.primeira-linha .input-with-icon {
+  width: 100%;
+}
+
+.input-with-icon {
+  display: flex;
+  height: 40px;
+}
+
+.input-with-icon input {
+  flex: 1;
+  border-radius: 6px 0 0 6px;
+  border: 1px solid #ccc;
+  border-right: none;
+  padding: 0 10px;
+}
+
+.input-with-icon button {
+  width: 40px;
+  border: 1px solid #ccc;
+  border-radius: 0 6px 6px 0;
+  background: #eee;
+  cursor: pointer;
+}
+
+/* Campos data e hora estilizadinho */
+.campo-data input,
+.campo-hora input {
+  padding: 10px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+  
+/* SEGUNDA LINHA DO FORMULÁRIO: */
+.segunda-linha {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control.nome {
+  flex: 2; /* Nome maior que Contato */
+}
+
+.form-control label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control input,
+.form-control select {
+  padding: 10px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* TERCEIRA LINHA DO FORMULÁRIO */ 
+
+/* Reaproveita o grid de duas colunas */
+  .terceira-linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Labels comuns */
+  .terceira-linha .form-control label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  /* Inputs comuns */
+  .terceira-linha .form-control input {
+    width: 100%;
+    padding: 10px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+
+
+  /* QUARTA LINHA DO FORMULÁRIO*/
+  .quarta-linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Labels comuns */
+  .quarta-linha .form-control label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  /* Inputs comuns */
+  .quarta-linha .form-control input {
+    width: 100%;
+    padding: 10px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+
+  
+  /*  ESTILO DO BOTÃO SALVAR: */
+    .btn.salvar {
+      font-size: 14px;
+      padding: 1em 2.7em;
+      font-weight: 500;
+      background: rgb(51 162 61);
+      color: white;
+      border: none;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.6em;
+      cursor: pointer;
+    }
+  
+    button span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-weight: 600;
+    }
+  
+    button.btn.salvar:hover {
+      background-color: #0A853D;
+    }
+  
+  /*  ESTILO DO BOTÃO CANCELAR: */
+  .btn.cancelar {
+    font-size: 14px;
+    padding: 1em 2.7em;
+    font-weight: 500;
+    background: rgb(41, 50, 88);
+    color: white;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.6em;
+    cursor: pointer;
+  }
+  
+  button.btn.btn.cancelar:hover {
+    background-color: rgb(171 171 171);
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Seção de foto */
+
+  .form-direito {
+
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: bold;
+    width: 80%;
+  }
+
+.foto-box {
+  width: 100%;
+  max-width: 350px; /* Ajuste o tamanho como preferir */
+  height: 290px; /* Mantém o retângulo */
+  background: #f2f2f2;
+  border: 1px dashed #aaa;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  margin: 0 auto 0px auto; /* Centraliza e dá espaço para os botões */
+}
+  
+  #foto-box {
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    
+  }
+  #foto-box video, #foto-box canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Botões de ação */
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+  }
+  
+  .btn.foto {
+    width: 100%;     
+    max-width: 170px; 
+    box-sizing: border-box;
+    font-size: 13px;
+    padding: 1em 2em;
+    font-weight: 600;
+    background: rgb(41, 50, 88);
+    color: white;
+    position: relative;
+    border-radius: 0.6em;
+    cursor: pointer;
+  }
+   
+  .btn.galeria {
+    width: 100%;  
+    max-width: 170px;  
+    box-sizing: border-box;
+    font-size: 12px;
+    padding: 1em 2em;
+    font-weight: 600;
+    background: rgb(41, 50, 88);
+    color: white;
+    position: relative;
+    border-radius: 0.6em;
+    cursor: pointer;
+  }
+  
+  #footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    background: linear-gradient(93deg, #293264 19%, #0a853d 100%);
+    color: #fff;
+    font-size: 12px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;     /* Centraliza verticalmente o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+  }
+
+  /* ===== Responsividade para tablets e celulares ===== */
+@media (max-width: 768px) {
+
+  /* Coloca tudo em coluna no formulário */
+  .formulario {
+    flex-direction: column;
+  }
+
+  /* Foto abaixo dos campos */
+  .form-esquerda {
+    width: 100%;
+  }
+  .form-right {
+    width: 100%;
+    order: 2;           /* Foto vem depois do form-left */
+    margin-top: 20px;   /* Espaço antes da foto */
+  }
+
+  /* Campos de primeira linha e grupos empilham verticalmente */
+  .first-row,
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .first-row {
+    grid-template-columns: 1fr; 
+  }
+
+  .foto-box {
+    width: 100%;
+    height: 200px;
+  }
+
+  .form-direito .form-actions {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .campo input,
+  .campo select,
+  .form-control input,
+  .form-control select {
+    width: 100%;
+  }
+}

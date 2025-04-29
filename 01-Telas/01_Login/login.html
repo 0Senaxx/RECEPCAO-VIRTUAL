@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Login</title>
+</head>
+<body>
+  <header class="cabecalho">
+    <h1>Recepção SEAD</h1>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>LOGIN</h2>
+      <form class="form-login">
+
+        <div class="campo-usuario">
+          <label for="usuario">Usuário</label>
+          <input type="text" name="usuario" id="usuario" placeholder="Digite seu usuário" required>
+        </div>
+
+        <div class="campo-senha">
+          <label for="senha">Senha</label>
+          <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+        </div>
+
+        <input type="submit" class="btn-login" onclick="logar()" value="Entrar">
+      </form>
+    </section>
+      
+  </main>
+
+  <footer class="rodape">
+    Copyright © 2025 SEAD | EPP. Todos os direitos reservados 
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

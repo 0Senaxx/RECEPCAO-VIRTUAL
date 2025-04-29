@@ -1,0 +1,73 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+/* Tipografia e fundo */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background:rgb(248, 248, 248);
+    color: #333;
+    line-height: 1.4;
+}
+.topbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: #293264;
+    background: linear-gradient(93deg, rgba(41, 50, 100, 1) 19%, rgba(10, 133, 61, 1) 100%);
+    color: #fff;
+    padding: 15px 30px;
+}
+
+.topbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.topbar nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.topbar nav a:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+}
+  
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #293264;
+    background: linear-gradient(93deg, rgba(41, 50, 100, 1) 19%, rgba(10, 133, 61, 1) 100%);
+    color: #fff;
+    padding: 15px 30px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer nav a:hover {
+    text-decoration: underline;
+}
